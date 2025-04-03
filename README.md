@@ -12,6 +12,7 @@ Most importantly, as the next step, the individual data for the sunitinib arm is
 # How to use the code scripts
 The user should first download the scripts and data in their own computer and save. Then the users can choose to copy the code in their local script and run the code in the following sequence mentioned below after setting their working directory correctly. The current analysis has been done using the [R software (version 4.4.2)](https://cran.r-project.org/bin/windows/base/old/4.4.2/) which was accessed through the [R studio IDE by Posit](https://posit.co/download/rstudio-desktop/) on a Windows 64-bit computing software having 16 BG memory and core i7 processor. 
 
+Before, we proceed the following R packages were used in the code: [tidyverse](https://www.tidyverse.org/packages/), [survival](https://cran.r-project.org/web/packages/survival/index.html), [survminer](https://cran.r-project.org/web/packages/survminer/index.html), [flexsurv](https://cran.r-project.org/web/packages/flexsurv/index.html), [simsurv](https://cran.r-project.org/web/packages/simsurv/index.html), [ggplo2](https://cran.r-project.org/web/packages/ggplot2/index.html) and [MASS](https://cran.r-project.org/web/packages/MASS/index.html). It should be noted that any copyrights of these packages (if applicable) completely vests with the original creators and developers and not us. 
 
 
 
