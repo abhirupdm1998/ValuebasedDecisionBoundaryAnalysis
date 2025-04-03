@@ -5,9 +5,13 @@ This repository comprises the reproducible R code and parameters of the fitted m
 
 # Choosing the Anchor Study
 For any time-to-event be it OS or PFS, the anchor study from the baseline risk is adjusted for the TPP study (novel HT) is followed as per the steps mentioned in the accompanying paper by Dutta Majumdar et al.
-After the scoring, in our case, for both OS and PFS, [Checkmate-214 Motzer et al](https://pubmed.ncbi.nlm.nih.gov/35383908/) was selected as best suitable for modeling sunitinib's baseline risk.   
+After the scoring, in our case, for both OS and PFS, [Checkmate-214 Motzer et al](https://pubmed.ncbi.nlm.nih.gov/35383908/) was selected as best suitable for modeling sunitinib's baseline risk. This step is conducted using summary data/information reported in respective trial/studies (should be the latest across all candidate studies, see the companion paper) 
+Most importantly, as the next step, the individual data for the sunitinib arm is extracted using [WebplotDigitizer app](https://automeris.io/) and reconstructed using the algorithm by [Guyot et al 2012](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/1471-2288-12-9)
 
-# How to use the R scripts
-The user should first download the scripts and data in their own computer and save. Then the users can choose to copy the code in their local script and run the code in the following sequence mentioned below after setting their working directory correctly. 
+
+# How to use the code scripts
+The user should first download the scripts and data in their own computer and save. Then the users can choose to copy the code in their local script and run the code in the following sequence mentioned below after setting their working directory correctly. The current analysis has been done using the [R software (version 4.4.2)](https://cran.r-project.org/bin/windows/base/old/4.4.2/) which was accessed through the [R studio IDE by Posit](https://posit.co/download/rstudio-desktop/) on a Windows 64-bit computing software having 16 BG memory and core i7 processor. 
+
+
 
 
