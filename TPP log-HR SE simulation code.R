@@ -95,8 +95,8 @@ HR_values <- c(0.1, 0.125, 0.15, 0.175, 0.20, 0.225, 0.25, 0.275, 0.30, 0.325, 0
 write.csv(data.frame(HR_values), "HR_values.csv", row.names = FALSE)
 cat("\n HR_values saved to HR_values.csv\n")
 
-# Number of simulations (as per Morris 2019)
-nsim <- 1600
+# Number of simulations (targeting 95% coverage and a Monte Carlo SE of bias value to be lower than 0.005, as per Morris 2019)
+nsim <- 1600 
 
 # Start timer
 start_time <- Sys.time()
@@ -125,7 +125,7 @@ logcumhaz <- function(t, x, betas, knots) {
     betas[["gamma1"]] * basis[[2]] +
     betas[["gamma2"]] * basis[[3]] +
     betas[["gamma3"]] * basis[[4]] +
-    betas[["arm"]] * x[["arm"]]
+    betas[["arm"]] * x[["arm"]] # modelled assuming proportional-hazards under the RP structure
   res
 }
 
@@ -139,7 +139,7 @@ sim_run <- function(true_mod, betas1, HR) {
                  x = cov, 
                  knots = true_mod$flexph2$knots, 
                  logcumhazard = logcumhaz, 
-                 maxt = 66, 
+                 maxt = 66, # max time of follow-up from Checkmate-214 
                  interval = c(1E-8, 100000))
   
   # Merge covariate data and event times
