@@ -1,5 +1,5 @@
 ##### Estimation of standard error######
-setwd("S:/Shared With Me/Clients/Internal Project/Value assessment framework for early assets/DBA manuscript/DBA2/Standard error/PFS")
+setwd("") #add your directory
 library(tidyverse)
 library(survival)
 library(survminer)
@@ -11,7 +11,7 @@ library(MASS)
 rm(list = ls())
 
 #Loading reconstructed km data using Guyot 2012
-sunitnib_pfs<-read.csv("S:/Shared With Me/Clients/Internal Project/Value assessment framework for early assets/DBA manuscript/DBA2/Standard error/PFS/IPD_CheckMate 214_PFS_Sunitinib.csv", header = T)
+sunitnib_pfs<-read.csv("IPD_CheckMate 214_PFS_Sunitinib.csv", header = T) # add your path to the reconstructed file
 
 ########## RP Model fitting ###########
 ### One internal knot ###
@@ -95,29 +95,13 @@ plot(flexph6,
      main = "Flexible par model knot6", 
      ylab = "Survival probability", 
      xlab = "Time")
-plot(flexph7, 
-     main = "Flexible par model knot6", 
-     ylab = "Survival probability", 
-     xlab = "Time")
-plot(flexph8, 
-     main = "Flexible par model knot6", 
-     ylab = "Survival probability", 
-     xlab = "Time")
-plot(flexph9, 
-     main = "Flexible par model knot6", 
-     ylab = "Survival probability", 
-     xlab = "Time")
-plot(flexph10, 
-     main = "Flexible par model knot6", 
-     ylab = "Survival probability", 
-     xlab = "Time")
 
 
 ########## Matrix of AIC and BIC of all fitted models#############
-BIC<- matrix(c(BIC(flexph1),BIC(flexph2), BIC(flexph3), BIC(flexph4),BIC(flexph5), BIC(flexph6),  BIC(flexph7), BIC(flexph8), BIC(flexph9), BIC(flexph10)),
-             nrow = 10,ncol = 1, byrow = T)
+BIC<- matrix(c(BIC(flexph1),BIC(flexph2), BIC(flexph3), BIC(flexph4),BIC(flexph5), BIC(flexph6),
+             nrow = 6,ncol = 1, byrow = T)
 rownames(BIC)<- c("Flex CS knot1",
-                      "Flex CS knot2","Flex CS knot3","Flex CS knot4","Flex CS knot5","Flex CS knot6","Flex CS knot7","Flex CS knot8","Flex CS knot9","Flex CS knot10" )
+                      "Flex CS knot2","Flex CS knot3","Flex CS knot4","Flex CS knot5","Flex CS knot6" )
 colnames(BIC)<- c("BIC")
  
 BIC_min<- rownames(BIC)[which.min(BIC[, 1])] ##CS2
