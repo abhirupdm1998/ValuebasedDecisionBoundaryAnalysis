@@ -10,8 +10,8 @@ library(progress)
 library(MASS)
 rm(list = ls())
 
-#Loading reconstructed km data using Guyot 2012
-sunitnib_pfs<-read.csv("IPD_CheckMate 214_PFS_Sunitinib.csv", header = T) # add your path to the reconstructed file
+#Loading reconstructed km data from Guyot 2012 output
+sunitnib_pfs<-read.csv("IPD_CheckMate 214_PFS_Sunitinib.csv", header = T) # add your path to the reconstructed file for anchor study comparator arm
 
 ########## RP Model fitting ###########
 ### One internal knot ###
@@ -46,29 +46,6 @@ flexph6<-flexsurvspline(Surv(time, death) ~ 1,
 flexph6
 BIC (flexph6)
 
-### Seven internal knots ### 
-flexph7<-flexsurvspline(Surv(time, death) ~ 1, 
-                        data = sunitnib_pfs, k = 7)
-flexph7
-BIC (flexph7)
-
-### Eight internal knots ### 
-flexph8<-flexsurvspline(Surv(time, death) ~ 1, 
-                        data = sunitnib_pfs, k = 8)
-flexph8
-BIC (flexph8)
-### Nine internal knots ### 
-flexph9<-flexsurvspline(Surv(time, death) ~ 1, 
-                        data = sunitnib_pfs, k = 9)
-flexph9
-BIC (flexph9)
-
-### Ten internal knots ### 
-flexph10<-flexsurvspline(Surv(time, death) ~ 1, 
-                        data = sunitnib_pfs, k = 10)
-flexph10
-BIC (flexph10)
-
 ##########Plotting of fitted curves over KM curve###########
 par(mfrow = c(2, 3), cex = 0.55) # graphics parameters
 plot(flexph1, 
@@ -97,7 +74,7 @@ plot(flexph6,
      xlab = "Time")
 
 
-########## Matrix of AIC and BIC of all fitted models#############
+########## Matrix of BIC of all fitted models#############
 BIC<- matrix(c(BIC(flexph1),BIC(flexph2), BIC(flexph3), BIC(flexph4),BIC(flexph5), BIC(flexph6),
              nrow = 6,ncol = 1, byrow = T)
 rownames(BIC)<- c("Flex CS knot1",
@@ -109,10 +86,11 @@ print(BIC_min)
 
 ######Simulating parametric standard errors based on best-fit#####
 
-set.seed(123)  # Set a single master seed
+set.seed(123)  # Set a single master seed for the bootstrap as per Morris 2019 (the users may wish to save the RNG state if there are convergence issues, not showed here)
 
 # Define custom HR values
-HR_values <- c(0.75, 0.775, 0.85) # , 0.875, 0.90, 0.925, 0.95, 0.975, 1.00
+HR_values <- c(0.1, 0.125, 0.15, 0.175, 0.20, 0.225, 0.25, 0.275, 0.30, 0.325, 0.35, 0.375, 0.40,0.425, 0.45, 0.475, 0.50, 0.525, 0.55, 0.575, 0.60, 0.625, 0.65, 
+               0.675, 0.70, 0.725, 0.75, 0.775, 0.80, 0.825, 0.85, 0.875, 0.90, 0.925, 0.95, 0.975, 1.00)
 # Save HR values to a CSV file
 write.csv(data.frame(HR_values), "HR_values.csv", row.names = FALSE)
 cat("\n HR_values saved to HR_values.csv\n")
