@@ -1,5 +1,6 @@
-Created by Abhirup Dutta Majumdar
-Quality checked by Sekhar Kumar Dutta 
+# © Copyright reserved by the Authors and PharmaQuant Insights Pvt. Ltd, India @2025
+# Created by Abhirup Dutta Majumdar
+# Quality checked by Sekhar Kumar Dutta 
 # Note: The user should always fully credit the authors of this paper in every private and public work conducted. If ever found in violation, there could be legal and copyright infringement consequences
 ##### Estimation of standard error######
 setwd("") #add your directory
