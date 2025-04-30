@@ -1,3 +1,8 @@
+# © Copyright reserved by the Authors and PharmaQuant Insights Pvt. Ltd, India @2025
+# Created by Anushri Sil 
+# Quality checked by Abhirup Dutta Majumdar
+# Note: The user should always fully credit the authors of this paper in every private and public work conducted. If ever found in violation, there could be legal and copyright infringement consequences
+###### Start ########
 # Load required libraries
 library(reshape2)
 library(openxlsx)
@@ -9,8 +14,8 @@ library(ggplot2)
 library(forcats)
 library(multinma)
 #upload data
-Scenario_PFS_data<-readxl::read_xlsx("Path to the file.xlsx")# Provide the path to your input file here
-TPP_PFS_data<-readxl::read_xlsx("Path to the file.xlsx")# Provide the path to your input file here
+Scenario_PFS_data<- readxl::read_xlsx("Path to the file.xlsx") # Provide the path to your input file here
+TPP_PFS_data <- readxl::read_xlsx("Path to the file.xlsx") # this file should contain the 
 
 # Create a new Excel workbook
 wb <- createWorkbook()
@@ -155,5 +160,5 @@ writeData(wb,sheet_name, rank_matrix_selected, startCol = 3, startRow = nrow(lea
 }
 
 # Save the workbook
-saveWorkbook(wb,"File path/Result_DBA_PFS.csv", overwrite = TRUE)#Add the folder path to save the DBA result
+saveWorkbook(wb,"File path/Result_DBA_PFS.csv", overwrite = TRUE) #Add the folder path to save the DBA result
 
