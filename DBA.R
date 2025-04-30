@@ -14,8 +14,8 @@ library(ggplot2)
 library(forcats)
 library(multinma)
 #upload data
-Scenario_PFS_data<- readxl::read_xlsx("Path to the file.xlsx") # Provide the path to your input file here
-TPP_PFS_data <- readxl::read_xlsx("Path to the file.xlsx") # this file should contain the 
+Scenario_PFS_data<- readxl::read_xlsx("Path to the folder/PFS_data.xlsx") # Provide the path to the excel file which contains the data on PFS HR for trials included in NMA excluding TPP. Use read.csv if the file is in csv format. 
+TPP_PFS_data <- readxl::read_xlsx("Path to the folder/TPP_data.xlsx") # This file should contain the data from target product profile. Use read.csv if the file is in csv format. 
 
 # Create a new Excel workbook
 wb <- createWorkbook()
