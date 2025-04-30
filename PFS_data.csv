@@ -1,0 +1,11 @@
+study,treatment,diff,std.err,sample_size
+JAVELIN,Avelumab + axitinib,-0.371063681,0.092539283,442
+JAVELIN,Sunitinib,,,444
+IMmotion 151,Atezo + Bev,-0.17007683,0.083478479,454
+IMmotion 151,Sunitinib,,,461
+CHECKMATE 214,Nivo + ipi,-0.166172655,0.079735515,550
+CHECKMATE 214,Sunitinib,,,546
+KEYNOTE 426,Pembro + axitinib,-0.395267283,0.099770387,432
+KEYNOTE 426,Sunitinib,,,429
+TPP,Wonderumab,,,550
+TPP,Sunitinib,,,546
