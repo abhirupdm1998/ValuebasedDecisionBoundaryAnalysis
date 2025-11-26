@@ -4,7 +4,7 @@ This GitHub repository has been created for easy communication of codes with lik
 This repository comprises the reproducible R code and parameters of the fitted models for OS and PFS for all the 37 HR scenarios between (0.1 to 1.00 by-step = 0.025) mentioned in the accompanying paper. Below we have mentioned the each of the files and pre-requisites and any special notes or comments that we may have. Again we note, the target product profile (TPP) for our illustrative example is for wonderumab versus sunitinib for determining value-based thresholds. 
 
 **Copyright**
-The copyright and ownership of the code completely vests with the authors of this code and the actual paper. Please cite this page whenever reusing this code properly along with the authors: Abhirup Dutta Majumdar, Sekhar Dutta, Anns Thomas, Ronan Mahon and Subrata Bhattacharrya and any reproduction of this code is strictly prohibited. 
+The copyright and ownership of the code completely vests with the authors of this code and the actual paper. Please cite this page whenever reusing this code properly along with the authors: Abhirup Dutta Majumdar, Sekhar Dutta, Anns Thomas, Ronan Mahon and Subrata Bhattacharyya and any reproduction of this code is strictly prohibited. 
 
 # Choosing the Anchor Study
 For any time-to-event be it OS or PFS, the anchor study from the baseline risk is adjusted for the TPP study (novel HT) is followed as per the steps mentioned in the accompanying paper by Dutta Majumdar et al.
